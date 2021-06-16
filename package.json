@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@astrajs/collections": "^0.1.0",
+    "@astrajs/rest": "^0.0.12",
+    "dotenv": "^10.0.0",
+    "sleep": "^6.3.0"
+  }
+}
