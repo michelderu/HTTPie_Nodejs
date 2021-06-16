@@ -1,14 +1,14 @@
-# Accessing Astra using HTTPie and @astrajs
-* Jump to REST
-* Jump to GraphQL
-* Jump to Document
-* Jump to @astrajs
+# Accessing DataStax Astra using HTTPie and Node.js @astrajs
+* Jump to [REST API](#rest)
+* Jump to [GraphQL API](#graphql)
+* Jump to [Document API](#document)
+* Jump to [Node.js @astrajs](#nodejs)
 
 ## Configuration
 See `.env` and `~/.config/httpie/config.json`.
 For a new Astra database run `./env.sh`.
 
-## REST
+## ① <a name="rest"></a> REST API
 ### Get keyspaces
 ```sh
 http :/rest/v1/keyspaces
@@ -81,7 +81,7 @@ http DELETE :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney
 ```sh
 http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen
 ```
-## GraphQL
+## ② <a name="graphql"></a> GraphQL API
 ### Create a table
 ```sh
 http POST :/graphql-schema query='
@@ -171,7 +171,7 @@ mutation deletecavemen {
   }
 }'
 ```
-## Document API
+## ③ <a name="document"></a> Document API
 ### Check namespaces
 ```sh
 http :/rest/v2/schemas/namespaces | jq ".data[].name"
@@ -220,7 +220,7 @@ http DELETE :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble
 ```sh
 http DELETE :/rest/v2/namespaces/KS/collections/cavemen
 ```
-## @astrajs
+## ④ <a name="nodejs"></a> Node.js @astrajs
 ### First install the libraries for Node.js
 ```sh
 npm install @astrajs/collections @astrajs/rest@0.0.12 sleep dotenv
