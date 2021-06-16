@@ -5,8 +5,18 @@
 * Jump to [Node.js @astrajs](#nodejs)
 
 ## Configuration
-See `.env` and `~/.config/httpie/config.json`.
-For a new Astra database run `./env.sh`.
+For a new Astra database run `./env.sh` and provide connection details, this will create a configuration file `.env`.
+
+To make things easier with HTTPie, create a configuration file `~/.config/httpie/config.json` and add the following:
+```json
+{
+    "default_options": [
+      "--style=fruity",
+      "--auth-type=astra",
+      "--auth=default:"
+    ]
+}
+```
 
 ## ① <a name="rest"></a> REST API
 ### Get keyspaces
