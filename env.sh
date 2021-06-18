@@ -1,5 +1,6 @@
 rm -rf .env
 touch .env
+rm -rf ~/.astrarc
 touch ~/.astrarc
 echo "[default]" >> ~/.astrarc
 echo "Please paste the export block from the connect page here:"
@@ -14,7 +15,6 @@ done
 echo "Please enter your application token"
 read token
 echo "ASTRA_DB_APPLICATION_TOKEN=$token" >> ~/.astrarc
-echo "GAMES_COLLECTION=games" >> ~/.astrarc
 echo "ASTRA_DB_TOKEN=0" >> ~/.astrarc
 echo "ASTRA_DB_TOKEN_TIME=0" >> ~/.astrarc
 echo "ASTRA_DB_APPLICATION_TOKEN=$token" >> .env

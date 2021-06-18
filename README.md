@@ -5,7 +5,9 @@
 * Jump to [Node.js @astrajs](#nodejs)
 
 ## Configuration
-For a new Astra database run `./env.sh` and provide connection details, this will create a configuration file `.env`.
+For a new Astra database run `./env.sh` and provide connection details, this will create two files:
+- A configuration file for use with HTTPie called `~/.astrarc`
+- A configuration file for use with Node.js called `.env`
 
 To make things easier with HTTPie, create a configuration file `~/.config/httpie/config.json` and add the following:
 ```json
@@ -17,6 +19,7 @@ To make things easier with HTTPie, create a configuration file `~/.config/httpie
     ]
 }
 ```
+This will tell HTTPie to use the `[default]` section from `~/.astrarc` for connectivity and authentication towards Astra.
 
 ## ① <a name="rest"></a> REST API
 ### Get keyspaces
@@ -232,16 +235,17 @@ http DELETE :/rest/v2/namespaces/KS/collections/cavemen
 ```
 ## ④ <a name="nodejs"></a> Node.js @astrajs
 ### First install the libraries for Node.js
+Make sure you have node installed.
 ```sh
-npm install @astrajs/collections @astrajs/rest@0.0.12 sleep dotenv
-```
-### Grab the caveman.js file
-```sh
-wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/cavemen.js
+npm install @astrajs/collections @astrajs/rest@0.0.12 dotenv
 ```
 ### Make sure the environment settings are correct
 Check the `.env` file for correct settings, else re-run `sh ./env.sh` and provide information from the Astra Connect tab.
-### Run cavemen
+### Cavemen using the @astra REST module
 ```sh
-node cavemen.js
+node cavemen_widerow.js
+```
+### Cavemen using the @astra collections module
+```sh
+node cavemen_document.js
 ```
