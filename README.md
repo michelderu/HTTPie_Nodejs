@@ -114,15 +114,13 @@ mutation createTables {
 ### Add some rows
 ```sh
 http POST :/graphql/workshop query='
-mutation insertcavemen {
+mutation insertCavemen {
   barney: insertcavemen(value: {firstname:"Barney", lastname: "Rubble"}) {
     value {
       firstname
     }
   }
-}'
-http POST :/graphql/workshop query='
-mutation insertcavemen {
+
   fred: insertcavemen(value: {firstname:"Fred", lastname: "Flintstone"}) {
     value {
       firstname
