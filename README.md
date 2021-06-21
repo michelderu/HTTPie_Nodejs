@@ -112,6 +112,7 @@ mutation createTables {
 )}'
 ```
 ### Add some rows
+Note how nicely we can insert nmultiple rows in one go:
 ```sh
 http POST :/graphql/workshop query='
 mutation insertCavemen {
